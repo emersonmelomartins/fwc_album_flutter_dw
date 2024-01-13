@@ -36,6 +36,7 @@ class SplashPage extends StatelessWidget {
             style: ButtonStyles.instance.primaryOutlineButton,
             onPressed: () {},
           ),
+          TextField(),
         ],
       )),
     );
