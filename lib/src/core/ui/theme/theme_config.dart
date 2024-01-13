@@ -14,7 +14,7 @@ class ThemeConfig {
   );
 
   static final theme = ThemeData(
-    useMaterial3: true,
+    useMaterial3: false,
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.white,
       elevation: 0,

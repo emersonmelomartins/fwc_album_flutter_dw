@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fwc_album_app/src/core/ui/styles/button_styles.dart';
+import 'package:fwc_album_app/src/core/ui/styles/text_styles.dart';
+import 'package:fwc_album_app/src/core/ui/widgets/button.dart';
+import 'package:fwc_album_app/src/core/ui/widgets/rounded_button.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -15,28 +18,15 @@ class SplashPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("Splash"),
-          ElevatedButton(
-            child: Text("Botão"),
-            style: ButtonStyles.instance.yellowButton,
+          Button(
+            style: context.buttonStyles.yellowButton,
+            labelStyle: context.textStyles.textPrimaryFontBold,
+            label: "Teste",
             onPressed: () {},
+            height: 300,
           ),
-          OutlinedButton(
-            child: Text("Botão 2"),
-            style: ButtonStyles.instance.yellowOutlineButton,
-            onPressed: () {},
-          ),
-          ElevatedButton(
-            child: Text("Botão"),
-            style: ButtonStyles.instance.primaryButton,
-            onPressed: () {},
-          ),
-          OutlinedButton(
-            child: Text("Botão 2"),
-            style: ButtonStyles.instance.primaryOutlineButton,
-            onPressed: () {},
-          ),
-          TextField(),
+          Button.primary(label: "Outro", onPressed: () {}, width: 200,),
+          RoundedButton(icon: Icons.abc, onPressed: () {},),
         ],
       )),
     );
