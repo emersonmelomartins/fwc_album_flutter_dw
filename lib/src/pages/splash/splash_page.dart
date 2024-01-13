@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fwc_album_app/src/core/styles/button_styles.dart';
+import 'package:fwc_album_app/src/core/ui/styles/button_styles.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
