@@ -25,15 +25,12 @@ class ButtonStyles {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
-        side: BorderSide(
-          color: ColorsApp.instance.yellow
-        ),
+        side: BorderSide(color: ColorsApp.instance.yellow),
         textStyle: TextStyles.instance.textSecondaryFontExtraBold.copyWith(
           fontSize: 14,
         ),
       );
 
-      
   ButtonStyle get primaryButton => ElevatedButton.styleFrom(
         backgroundColor: ColorsApp.instance.primary,
         shape: RoundedRectangleBorder(
@@ -44,16 +41,17 @@ class ButtonStyles {
         ),
       );
 
-      
   ButtonStyle get primaryOutlineButton => OutlinedButton.styleFrom(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
-        side: BorderSide(
-          color: ColorsApp.instance.primary
-        ),
+        side: BorderSide(color: ColorsApp.instance.primary),
         textStyle: TextStyles.instance.textSecondaryFontExtraBold.copyWith(
           fontSize: 14,
         ),
       );
+}
+
+extension ButtonStylesExtensions on BuildContext {
+  ButtonStyles get buttonStyles => ButtonStyles.instance;
 }

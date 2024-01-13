@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:fwc_album_app/src/core/styles/colors_app.dart';
 import 'package:fwc_album_app/src/core/styles/text_styles.dart';
 
-final _defaultInputBorder = OutlineInputBorder(
-  borderRadius: BorderRadius.circular(18),
-  borderSide: BorderSide(
-    color: ColorsApp.instance.greyDark,
-    width: 1,
-  ),
-);
-
 class ThemeConfig {
   ThemeConfig._();
+
+  static final _defaultInputBorder = OutlineInputBorder(
+    borderRadius: BorderRadius.circular(18),
+    borderSide: BorderSide(
+      color: ColorsApp.instance.greyDark,
+      width: 1,
+    ),
+  );
 
   static final theme = ThemeData(
     useMaterial3: true,
