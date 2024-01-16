@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:fwc_album_app/src/core/ui/helpers/loader.dart';
-import 'package:fwc_album_app/src/core/ui/helpers/messages.dart';
 import 'package:fwc_album_app/src/core/ui/styles/button_styles.dart';
 import 'package:fwc_album_app/src/core/ui/styles/colors_app.dart';
 import 'package:fwc_album_app/src/core/ui/styles/text_styles.dart';
 import 'package:fwc_album_app/src/core/ui/widgets/button.dart';
+import 'package:fwc_album_app/src/pages/splash/presenter/splash_presenter.dart';
+import 'package:fwc_album_app/src/pages/splash/view/impl_splash_view.dart';
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({super.key});
+  final SplashPresenter presenter;
+
+  const SplashPage({
+    super.key,
+    required this.presenter,
+  });
 
   @override
   State<SplashPage> createState() => _SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage>
-    with Loader<SplashPage>, Messages<SplashPage> {
+class _SplashPageState extends SplashViewImpl {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -48,7 +52,9 @@ class _SplashPageState extends State<SplashPage>
                 padding: EdgeInsets.only(bottom: size.height * 0.19),
                 child: Button(
                   width: size.width * 0.9,
-                  onPressed: () {},
+                  onPressed: () {
+                    widget.presenter.checkLogin();
+                  },
                   style: context.buttonStyles.yellowButton,
                   labelStyle:
                       context.textStyles.textSecondaryFontExtraBoldPrimaryColor,
