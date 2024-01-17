@@ -5,6 +5,8 @@ import 'package:fwc_album_app/src/core/ui/theme/theme_config.dart';
 import 'package:fwc_album_app/src/pages/auth/login/login_page.dart';
 import 'package:fwc_album_app/src/pages/home/home_page.dart';
 import 'package:fwc_album_app/src/pages/splash/splash_route.dart';
+import 'package:fwc_album_app/src/repositories/auth/auth_repository.dart';
+import 'package:fwc_album_app/src/repositories/auth/auth_repository_impl.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -13,7 +15,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlutterGetItApplicationBinding(
       bindingsBuilder: () => [
-        Bind.lazySingleton((i) => CustomDio()),
+        Bind.lazySingleton<CustomDio>((i) => CustomDio()),
+        Bind.lazySingleton<AuthRepository>((i) => AuthRepositoryImpl(dio: i())), // Callable Class
       ],
       child: MaterialApp(
         title: "Fifa World Cup Album",
