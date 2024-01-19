@@ -3,6 +3,7 @@ import 'package:flutter_getit/flutter_getit.dart';
 import 'package:fwc_album_app/src/core/rest/custom_dio.dart';
 import 'package:fwc_album_app/src/core/ui/theme/theme_config.dart';
 import 'package:fwc_album_app/src/pages/auth/login/login_page.dart';
+import 'package:fwc_album_app/src/pages/auth/register/register_page.dart';
 import 'package:fwc_album_app/src/pages/home/home_page.dart';
 import 'package:fwc_album_app/src/pages/splash/splash_route.dart';
 import 'package:fwc_album_app/src/repositories/auth/auth_repository.dart';
@@ -25,6 +26,7 @@ class App extends StatelessWidget {
         routes: {
           "/": (_) => const SplashRoute(),
           "/auth/login": (_) => const LoginPage(),
+          "/auth/register": (_) => const RegisterPage(),
           "/home": (_) => const HomePage(),
         },
       ),
