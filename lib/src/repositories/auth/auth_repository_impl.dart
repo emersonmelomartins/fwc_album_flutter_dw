@@ -22,9 +22,9 @@ class AuthRepositoryImpl implements AuthRepository {
         "password": password,
       });
 
-      final accessToken = result.data["access_token"];
+      final String? accessToken = result.data["access_token"];
 
-      if (accessToken) {
+      if (accessToken == null) {
         throw UnauthorizedException();
       }
 
